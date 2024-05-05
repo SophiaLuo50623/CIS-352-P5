@@ -30,6 +30,15 @@ compile ir-virtual files like so:
 racket compiler.rkt -v test-programs/sum1.irv 
 
 (Also pass in -m for Mac)
+ir-virtual is useful for showing the order in which the function executes commands
+Compared to x86 it is much easier to understand as it shows the variables and functions. x86 moreso represents the hardware's understanding of commands and registers.
+Pros:
+Shows Variables and functions
+The coder is able to understand it easier
+Cons:
+Cannot track the processes within the memory
+Can be harder to track errors within the execution
+
 
 [ Question 2 ] 
 
@@ -48,6 +57,12 @@ carefully the relevance of each of the intermediate representations.
 
 For this question, please add your `.ifa` programs either (a) here or
 (b) to the repo and write where they are in this file.
+arith2.ifa - (print (* (* 3249 (- 1 9234)) 100))
+if2.ifa - (if (not bop?)(print #f)(print #t))
+cond2.ifa (cond [0 (print1)]
+                [(? lit? l)(print 100)]
+                [(+ 5 ((* 10 (+ (- 8 3) -2))))(print (+ 206 832))]
+                [else (print #f)])
 
 [ Question 3 ] 
 
@@ -61,6 +76,9 @@ there could be more?
 In answering this question, you must use specific examples that you
 got from running the compiler and generating an output.
 
+First the compiler updates the pointer
+Then it 
+
 [ Question 4 ] 
 
 This is a larger project, compared to our previous projects. This
@@ -70,6 +88,8 @@ project that we discussed in class this semester. There is no specific
 definition of what an idiom is: think carefully about whether you see
 any pattern in this code that resonates with you from earlier in the
 semester.
+
+
 
 [ Question 5 ] 
 
